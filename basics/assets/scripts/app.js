@@ -1,8 +1,15 @@
 let currentResult = 0;
 
+function getUserInput()  {
+    return parseInt(userInput.value);
+}
+
 function add() {
-    currentResult = currentResult + parseInt(userInput.value);
-    outputResult(currentResult, '');
+    const enteredNumber = getUserInput();
+    const calculationDescription = `${currentResult} + ${enteredNumber}`;
+    currentResult = currentResult + enteredNumber;
+    // +userInput.value transform to number, keeping the floating point if appears
+    outputResult(currentResult, calculationDescription);
 }
 
 // não passa com parenteses, só o nome da função, 
