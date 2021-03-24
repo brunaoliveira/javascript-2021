@@ -4,37 +4,35 @@ function getUserInput()  {
     return parseInt(userInput.value);
 }
 
+function createAndWriteOutput(operator, previousResult, inputNumber) {
+    const calculationDescription = `${previousResult} ${operator} ${inputNumber}`;
+    outputResult(currentResult, calculationDescription);
+}
+
 function add() {
     const enteredNumber = getUserInput();
-    const calculationDescription = `${currentResult} + ${enteredNumber}`;
+    const previousResult = currentResult;
     currentResult = currentResult + enteredNumber;
     // +userInput.value transform to number, keeping the floating point if appears
-
-    outputResult(currentResult, calculationDescription);
+    createAndWriteOutput('+', previousResult, enteredNumber);
 }
 
 function subtract() {
     const enteredNumber = getUserInput();
-    const calculationDescription = `${currentResult} - ${enteredNumber}`;
     currentResult = currentResult - enteredNumber;
-
-    outputResult(currentResult, calculationDescription);
+    createAndWriteOutput('-', previousResult, enteredNumber);
 }
 
 function multiply() {
     const enteredNumber = getUserInput();
-    const calculationDescription = `${currentResult} * ${enteredNumber}`;
     currentResult = currentResult * enteredNumber;
-
-    outputResult(currentResult, calculationDescription);
+    createAndWriteOutput('*', previousResult, enteredNumber);
 }
 
 function divide() {
     const enteredNumber = getUserInput();
-    const calculationDescription = `${currentResult} / ${enteredNumber}`;
     currentResult = currentResult / enteredNumber;
-
-    outputResult(currentResult, calculationDescription);
+    createAndWriteOutput('/', previousResult, enteredNumber);
 }
 
 // não passa com parenteses, só o nome da função, 
