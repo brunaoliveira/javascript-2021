@@ -12,26 +12,26 @@ function createAndWriteOutput(operator, previousResult, inputNumber) {
 function add() {
     const enteredNumber = getUserInput();
     const previousResult = currentResult;
-    currentResult = currentResult + enteredNumber;
+    currentResult += enteredNumber;
     // +userInput.value transform to number, keeping the floating point if appears
     createAndWriteOutput('+', previousResult, enteredNumber);
 }
 
 function subtract() {
     const enteredNumber = getUserInput();
-    currentResult = currentResult - enteredNumber;
+    currentResult -= enteredNumber;
     createAndWriteOutput('-', previousResult, enteredNumber);
 }
 
 function multiply() {
     const enteredNumber = getUserInput();
-    currentResult = currentResult * enteredNumber;
+    currentResult *= enteredNumber;
     createAndWriteOutput('*', previousResult, enteredNumber);
 }
 
 function divide() {
     const enteredNumber = getUserInput();
-    currentResult = currentResult / enteredNumber;
+    currentResult /= enteredNumber;
     createAndWriteOutput('/', previousResult, enteredNumber);
 }
 
