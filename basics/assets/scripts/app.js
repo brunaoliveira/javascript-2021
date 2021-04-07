@@ -36,18 +36,24 @@ function subtract() {
     const enteredNumber = getUserInput();
     currentResult -= enteredNumber;
     createAndWriteOutput('-', previousResult, enteredNumber);
+    witeToLog('SUB', previousResult, enteredNumber);
+    console.log(logEntries);
 }
 
 function multiply() {
     const enteredNumber = getUserInput();
     currentResult *= enteredNumber;
     createAndWriteOutput('*', previousResult, enteredNumber);
+    witeToLog('MUL', previousResult, enteredNumber);
+    console.log(logEntries);
 }
 
 function divide() {
     const enteredNumber = getUserInput();
     currentResult /= enteredNumber;
     createAndWriteOutput('/', previousResult, enteredNumber);
+    witeToLog('DIV', previousResult, enteredNumber);
+    console.log(logEntries);
 }
 
 // não passa com parenteses, só o nome da função, 
