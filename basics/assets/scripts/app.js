@@ -11,22 +11,25 @@ function createAndWriteOutput(operator, previousResult, inputNumber) {
     logEntries.push(calculationDescription);
 }
 
+function writeToLog(operator, previousResult, inputNumber) {
+    const logEntry = {
+        operation: operator,
+        previousResult: previousResult,
+        number: inputNumber,
+        result: currentResult
+    };
+
+    logEntries.push(logEntry);
+}
+
 function add() {
     const enteredNumber = getUserInput();
     const previousResult = currentResult;
     currentResult += enteredNumber;
     // +userInput.value transform to number, keeping the floating point if appears
     createAndWriteOutput('+', previousResult, enteredNumber);
-    
-    const logEntry = {
-        operation: 'ADD',
-        previousResult: previousResult,
-        number: enteredNumber,
-        result: currentResult
-    };
-
-    logEntries.push(logEntry);
-    console.log(logEntry.operation);
+    writeToLog('ADD', previousResult, enteredNumber);
+    console.log(logEntries);
 }
 
 function subtract() {
