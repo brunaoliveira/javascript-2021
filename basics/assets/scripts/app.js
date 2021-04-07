@@ -1,4 +1,5 @@
 let currentResult = 0;
+let logEntries = [];
 
 function getUserInput()  {
     return parseInt(userInput.value);
@@ -7,6 +8,7 @@ function getUserInput()  {
 function createAndWriteOutput(operator, previousResult, inputNumber) {
     const calculationDescription = `${previousResult} ${operator} ${inputNumber}`;
     outputResult(currentResult, calculationDescription);
+    logEntries.push(calculationDescription);
 }
 
 function add() {
@@ -15,6 +17,15 @@ function add() {
     currentResult += enteredNumber;
     // +userInput.value transform to number, keeping the floating point if appears
     createAndWriteOutput('+', previousResult, enteredNumber);
+    
+    const logEntry = {
+        operation: 'ADD',
+        previousResult: previousResult,
+        number: enteredNumber,
+        result: currentResult
+    };
+    
+    logEntries.push(logEntry);
 }
 
 function subtract() {
