@@ -24,8 +24,9 @@ function add() {
         number: enteredNumber,
         result: currentResult
     };
-    
+
     logEntries.push(logEntry);
+    console.log(logEntry.operation);
 }
 
 function subtract() {
