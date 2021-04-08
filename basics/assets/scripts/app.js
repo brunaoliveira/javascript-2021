@@ -11,7 +11,7 @@ function createAndWriteOutput(operator, previousResult, inputNumber) {
     logEntries.push(calculationDescription);
 }
 
-function writeToLog(operator, previousResult, inputNumber) {
+function writeToLog(operator, previousResult, inputNumber, currentResult) {
     const logEntry = {
         operation: operator,
         previousResult: previousResult,
@@ -26,33 +26,40 @@ function add() {
     const enteredNumber = getUserInput();
     const previousResult = currentResult;
     currentResult += enteredNumber;
+
     // +userInput.value transform to number, keeping the floating point if appears
     createAndWriteOutput('+', previousResult, enteredNumber);
-    writeToLog('ADD', previousResult, enteredNumber);
+    writeToLog('ADD', previousResult, enteredNumber, currentResult);
     console.log(logEntries);
 }
 
 function subtract() {
     const enteredNumber = getUserInput();
+    const previousResult = currentResult;
     currentResult -= enteredNumber;
+
     createAndWriteOutput('-', previousResult, enteredNumber);
-    witeToLog('SUB', previousResult, enteredNumber);
+    writeToLog('SUB', previousResult, enteredNumber, currentResult);
     console.log(logEntries);
 }
 
 function multiply() {
     const enteredNumber = getUserInput();
+    const previousResult = currentResult;
     currentResult *= enteredNumber;
+
     createAndWriteOutput('*', previousResult, enteredNumber);
-    witeToLog('MUL', previousResult, enteredNumber);
+    writeToLog('MUL', previousResult, enteredNumber, currentResult);
     console.log(logEntries);
 }
 
 function divide() {
     const enteredNumber = getUserInput();
+    const previousResult = currentResult;
     currentResult /= enteredNumber;
+
     createAndWriteOutput('/', previousResult, enteredNumber);
-    witeToLog('DIV', previousResult, enteredNumber);
+    writeToLog('DIV', previousResult, enteredNumber, currentResult);
     console.log(logEntries);
 }
 
