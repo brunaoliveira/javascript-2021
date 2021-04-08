@@ -20,6 +20,7 @@ function writeToLog(operator, previousResult, inputNumber, currentResult) {
     };
 
     logEntries.push(logEntry);
+    console.log(logEntries);
 }
 
 function add() {
@@ -30,7 +31,6 @@ function add() {
     // +userInput.value transform to number, keeping the floating point if appears
     createAndWriteOutput('+', previousResult, enteredNumber);
     writeToLog('ADD', previousResult, enteredNumber, currentResult);
-    console.log(logEntries);
 }
 
 function subtract() {
@@ -40,7 +40,6 @@ function subtract() {
 
     createAndWriteOutput('-', previousResult, enteredNumber);
     writeToLog('SUB', previousResult, enteredNumber, currentResult);
-    console.log(logEntries);
 }
 
 function multiply() {
@@ -50,7 +49,6 @@ function multiply() {
 
     createAndWriteOutput('*', previousResult, enteredNumber);
     writeToLog('MUL', previousResult, enteredNumber, currentResult);
-    console.log(logEntries);
 }
 
 function divide() {
@@ -60,7 +58,6 @@ function divide() {
 
     createAndWriteOutput('/', previousResult, enteredNumber);
     writeToLog('DIV', previousResult, enteredNumber, currentResult);
-    console.log(logEntries);
 }
 
 // não passa com parenteses, só o nome da função, 
