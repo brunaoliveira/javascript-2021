@@ -8,7 +8,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
-            "url": "file:///home/bruna/Documents/git/javascript-2021/basics/index.html",
+            "url": "file:///home/bruna/Documents/git/javascript-2021/monster_killer/index.html",
             "webRoot": "${workspaceFolder}"
         }
     ]
