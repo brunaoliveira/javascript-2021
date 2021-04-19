@@ -37,7 +37,7 @@ function calculateResult(calculationType) {
     } else if (calculationType === 'multiply') {
         currentResult *= enteredNumber;
         operationSymbol = "*";
-    } else if (calculationType === 'divide'){
+    } else if (calculationType === 'divide' && enteredNumber != 0){
         currentResult /= enteredNumber;
         operationSymbol = "/";
     } else {
