@@ -31,16 +31,18 @@ function calculateResult(calculationType) {
     if (calculationType === 'add') {
         currentResult += enteredNumber;
         operationSymbol = "+";
-    } else if (calculationType === 'sub') {
+    } else if (calculationType === 'subtract') {
         currentResult -= enteredNumber;
         operationSymbol = "-";
-    } else if (calculationType === 'mul') {
+    } else if (calculationType === 'multiply') {
         currentResult *= enteredNumber;
         operationSymbol = "*";
-    } else {
+    } else if (calculationType === 'divide'){
         currentResult /= enteredNumber;
         operationSymbol = "/";
-    }             
+    } else {
+        return;
+    }            
 
     createAndWriteOutput(operationSymbol, previousResult, enteredNumber);
     writeToLog(calculationType.toUpperCase(), previousResult, enteredNumber, currentResult);
@@ -51,15 +53,15 @@ function add() {
 }
 
 function subtract() {
-    calculateResult('sub');
+    calculateResult('subtract');
 }
 
 function multiply() {
-    calculateResult('mul');
+    calculateResult('multiply');
 }
 
 function divide() {
-    calculateResult('div');
+    calculateResult('divide');
 }
 
 // não passa com parenteses, só o nome da função, 
