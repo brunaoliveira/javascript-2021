@@ -23,41 +23,50 @@ function writeToLog(operator, previousResult, inputNumber, currentResult) {
     console.log(logEntries);
 }
 
-function add() {
+function calculateResult(calculationType) {
     const enteredNumber = getUserInput();
     const previousResult = currentResult;
-    currentResult += enteredNumber;
+    var operationSymbol;
 
-    // +userInput.value transform to number, keeping the floating point if appears
-    createAndWriteOutput('+', previousResult, enteredNumber);
-    writeToLog('ADD', previousResult, enteredNumber, currentResult);
+    if (calculationType === 'add') {
+        currentResult += enteredNumber;
+        operationSymbol = "+";
+    } else {
+        if (calculationType === 'sub') {
+            currentResult -= enteredNumber;
+            operationSymbol = "-";
+        } else {
+            if (calculationType === 'mul') {
+                currentResult *= enteredNumber;
+                operationSymbol = "*";
+            } else {
+                if (calculationType === 'div') {
+                    currentResult /= enteredNumber;
+                    operationSymbol = "/";
+                }
+            }
+        }
+    }
+
+
+    createAndWriteOutput(operationSymbol, previousResult, enteredNumber);
+    writeToLog(calculationType.toUpperCase(), previousResult, enteredNumber, currentResult);
+}
+
+function add() {
+    calculateResult('add');
 }
 
 function subtract() {
-    const enteredNumber = getUserInput();
-    const previousResult = currentResult;
-    currentResult -= enteredNumber;
-
-    createAndWriteOutput('-', previousResult, enteredNumber);
-    writeToLog('SUB', previousResult, enteredNumber, currentResult);
+    alculateResult('sub');
 }
 
 function multiply() {
-    const enteredNumber = getUserInput();
-    const previousResult = currentResult;
-    currentResult *= enteredNumber;
-
-    createAndWriteOutput('*', previousResult, enteredNumber);
-    writeToLog('MUL', previousResult, enteredNumber, currentResult);
+    alculateResult('mul');
 }
 
 function divide() {
-    const enteredNumber = getUserInput();
-    const previousResult = currentResult;
-    currentResult /= enteredNumber;
-
-    createAndWriteOutput('/', previousResult, enteredNumber);
-    writeToLog('DIV', previousResult, enteredNumber, currentResult);
+    alculateResult('div');
 }
 
 // não passa com parenteses, só o nome da função, 
